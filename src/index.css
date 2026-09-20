@@ -688,9 +688,9 @@
 /* Emerald Treasury — creative ganj identity */
 @layer components {
   .treasury-shell {
-    --treasury-emerald: #4c060f;
-    --treasury-emerald-deep: #35030a;
-    --treasury-emerald-bright: #760e1c;
+    --treasury-crimson: #4c060f;
+    --treasury-crimson-deep: #35030a;
+    --treasury-crimson-bright: #760e1c;
     --treasury-red: #7f0616;
     --treasury-red-bright: #b30b22;
     --treasury-red-glow: #f13a4d;
@@ -750,7 +750,7 @@
     min-height: 44px;
     align-items: center;
     gap: 0.55rem;
-    color: var(--treasury-emerald);
+    color: var(--treasury-crimson);
     font-size: 1rem;
     font-weight: 780;
     letter-spacing: 0.02em;
@@ -766,7 +766,7 @@
     border: 1px solid color-mix(in srgb, var(--treasury-gold) 62%, transparent);
     border-radius: 48% 48% 58% 58% / 38% 38% 68% 68%;
     color: var(--treasury-gold-bright);
-    background: linear-gradient(145deg, var(--treasury-emerald), var(--treasury-emerald-deep));
+    background: linear-gradient(145deg, var(--treasury-crimson), var(--treasury-crimson-deep));
     box-shadow: 0 5px 16px rgba(53, 3, 10, 0.18), inset 0 0 0 2px rgba(255, 255, 255, 0.06);
   }
 
@@ -842,7 +842,7 @@
     place-items: center;
     border: 0.5px solid var(--border);
     border-radius: 15px;
-    color: var(--treasury-emerald);
+    color: var(--treasury-crimson);
     background: var(--material-strong);
     box-shadow: var(--shadow);
     transition: transform 160ms ease, box-shadow 160ms ease;
@@ -1403,12 +1403,12 @@
   .treasury-shell .ios-compact-button { color: #201416; background: linear-gradient(135deg, #edca68, #be8b21); box-shadow: 0 8px 20px rgba(187, 134, 24, 0.18); }
   .treasury-shell .ios-list-row { min-height: 64px; padding: 0.65rem 0.7rem; }
   .treasury-shell .ios-list-row-featured { background: linear-gradient(90deg, var(--primary-soft), transparent); }
-  .treasury-shell .ios-protocol-badge { min-width: 54px; border-radius: 999px; color: #effbf5; background: linear-gradient(135deg, var(--treasury-emerald-bright), var(--treasury-emerald)); }
-  .treasury-shell .ios-row-action { border: 0.5px solid var(--border); color: var(--treasury-emerald); background: var(--material-strong); }
+  .treasury-shell .ios-protocol-badge { min-width: 54px; border-radius: 999px; color: #effbf5; background: linear-gradient(135deg, var(--treasury-crimson-bright), var(--treasury-crimson)); }
+  .treasury-shell .ios-row-action { border: 0.5px solid var(--border); color: var(--treasury-crimson); background: var(--material-strong); }
   .dark .treasury-shell .ios-row-action { color: var(--treasury-gold-bright); }
   .treasury-shell .ios-segmented-control { border-radius: 999px; padding: 4px; }
   .treasury-shell .ios-segmented-item { min-height: 38px; border-radius: 999px; }
-  .treasury-shell .ios-segmented-item.is-selected { color: #f4fbf7; background: linear-gradient(135deg, var(--treasury-emerald-bright), var(--treasury-emerald)); box-shadow: 0 5px 16px rgba(76, 5, 14, 0.2); }
+  .treasury-shell .ios-segmented-item.is-selected { color: #f4fbf7; background: linear-gradient(135deg, var(--treasury-crimson-bright), var(--treasury-crimson)); box-shadow: 0 5px 16px rgba(76, 5, 14, 0.2); }
   .treasury-shell .ios-platform-icon { border-radius: 13px; }
   .treasury-shell .ios-accordion-item.is-current { border-color: color-mix(in srgb, var(--treasury-gold) 58%, var(--border)); box-shadow: 0 8px 30px rgba(174, 123, 19, 0.1); }
   .treasury-shell .ios-app-card.is-recommended { border-color: color-mix(in srgb, var(--treasury-gold) 64%, var(--border)); box-shadow: 0 8px 22px rgba(168, 119, 18, 0.08); }
@@ -1533,7 +1533,7 @@
     place-items: center;
     border: 0.5px solid var(--border);
     border-radius: 13px;
-    color: var(--treasury-emerald);
+    color: var(--treasury-crimson);
     background: var(--material-strong);
     box-shadow: 0 5px 15px rgba(52, 7, 13, 0.06);
     transition: transform 140ms ease, color 140ms ease, background 140ms ease, box-shadow 140ms ease;
@@ -1569,17 +1569,17 @@
     transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
   }
 
-  .treasury-config-rail { position: absolute; inset-inline-start: 0; top: 20%; bottom: 20%; width: 3px; border-radius: 999px; background: linear-gradient(180deg, var(--treasury-gold-bright), var(--treasury-emerald-bright)); }
+  .treasury-config-rail { position: absolute; inset-inline-start: 0; top: 20%; bottom: 20%; width: 3px; border-radius: 999px; background: linear-gradient(180deg, var(--treasury-gold-bright), var(--treasury-crimson-bright)); }
   .treasury-config-number { display: grid; width: 34px; height: 34px; place-items: center; border-radius: 12px; color: var(--treasury-gold); background: var(--primary-soft); font-size: 0.66rem; font-weight: 780; font-variant-numeric: tabular-nums; }
   .treasury-server-icon {
     display: grid;
     width: 42px;
     height: 42px;
     place-items: center;
-    border: 0.5px solid color-mix(in srgb, var(--treasury-emerald) 24%, var(--border));
+    border: 0.5px solid color-mix(in srgb, var(--treasury-crimson) 24%, var(--border));
     border-radius: 14px;
-    color: var(--treasury-emerald-bright);
-    background: color-mix(in srgb, var(--treasury-emerald-bright) 9%, var(--card-solid));
+    color: var(--treasury-crimson-bright);
+    background: color-mix(in srgb, var(--treasury-crimson-bright) 9%, var(--card-solid));
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
   }
 
@@ -1600,7 +1600,7 @@
   .treasury-server-ping b { font-size: 0.65rem; font-weight: 760; font-variant-numeric: tabular-nums; white-space: nowrap; }
   .treasury-config-copy { min-width: 0; }
   .treasury-config-copy > div { display: flex; align-items: center; gap: 0.35rem; }
-  .treasury-config-protocol { display: inline-flex; min-height: 20px; align-items: center; border-radius: 999px; padding-inline: 0.45rem; color: #effbf5; background: linear-gradient(135deg, var(--treasury-emerald-bright), var(--treasury-emerald)); font-size: 0.53rem; font-weight: 780; text-transform: uppercase; }
+  .treasury-config-protocol { display: inline-flex; min-height: 20px; align-items: center; border-radius: 999px; padding-inline: 0.45rem; color: #effbf5; background: linear-gradient(135deg, var(--treasury-crimson-bright), var(--treasury-crimson)); font-size: 0.53rem; font-weight: 780; text-transform: uppercase; }
   .treasury-config-emoji { font-size: 0.76rem; }
   .treasury-config-copy strong { display: block; overflow: hidden; margin-top: 0.28rem; color: var(--foreground); font-size: 0.82rem; font-weight: 720; text-overflow: ellipsis; white-space: nowrap; }
   .treasury-config-copy small { display: block; margin-top: 0.1rem; color: var(--muted-foreground); font-size: 0.6rem; }
@@ -1701,4 +1701,138 @@
   .treasury-hero.is-traffic-empty::after,
   .treasury-hero.is-traffic-empty .treasury-shield,
   .treasury-hero.is-traffic-empty .treasury-orbit { animation: none; }
+}
+
+
+/* Zomorod Red Glass — final responsive/premium polish */
+.treasury-shell {
+  isolation: isolate;
+}
+
+.treasury-shell::before {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  content: "";
+  background:
+    radial-gradient(circle at 78% 8%, rgba(166, 12, 34, 0.16), transparent 30rem),
+    radial-gradient(circle at 8% 68%, rgba(92, 3, 16, 0.12), transparent 28rem),
+    linear-gradient(135deg, transparent 0 48%, rgba(255, 255, 255, 0.012) 50%, transparent 52% 100%);
+  background-size: auto, auto, 28px 28px;
+  opacity: .9;
+}
+
+.dark .treasury-shell::before {
+  background:
+    radial-gradient(circle at 78% 8%, rgba(213, 22, 51, 0.13), transparent 30rem),
+    radial-gradient(circle at 8% 68%, rgba(108, 5, 21, 0.16), transparent 28rem),
+    linear-gradient(135deg, transparent 0 48%, rgba(255, 255, 255, 0.012) 50%, transparent 52% 100%);
+}
+
+.treasury-brand-shield,
+.treasury-refresh,
+.treasury-metrics,
+.treasury-reservoir,
+.treasury-detail-strip,
+.treasury-traffic-card,
+.treasury-config-card {
+  -webkit-backdrop-filter: blur(18px) saturate(125%);
+  backdrop-filter: blur(18px) saturate(125%);
+}
+
+.treasury-brand {
+  text-shadow: 0 0 22px color-mix(in srgb, var(--treasury-crimson-bright) 18%, transparent);
+}
+
+.treasury-brand-shield {
+  box-shadow:
+    0 8px 24px rgba(68, 2, 11, .22),
+    0 0 26px color-mix(in srgb, var(--treasury-crimson-bright) 16%, transparent),
+    inset 0 1px 0 rgba(255, 255, 255, .12);
+}
+
+.treasury-hero:not(.is-traffic-empty)::after {
+  position: absolute;
+  top: -40%;
+  left: -28%;
+  width: 28%;
+  height: 180%;
+  pointer-events: none;
+  content: "";
+  transform: rotate(16deg);
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.08), transparent);
+  filter: blur(1px);
+  animation: zomorod-hero-sheen 8s cubic-bezier(.22,.61,.36,1) infinite;
+}
+
+.treasury-traffic-card {
+  position: relative;
+  border-color: color-mix(in srgb, var(--treasury-crimson-bright) 18%, var(--border));
+  box-shadow: var(--shadow), 0 0 0 1px rgba(255,255,255,.015) inset;
+}
+
+.treasury-traffic-card::before {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 1px;
+  pointer-events: none;
+  content: "";
+  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--treasury-crimson-bright) 55%, transparent), transparent);
+}
+
+.treasury-config-card,
+.treasury-subscription-card,
+.treasury-reservoir {
+  contain: paint;
+}
+
+.treasury-config-card::after {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  content: "";
+  background: linear-gradient(125deg, rgba(255,255,255,.035), transparent 34%, transparent 70%, rgba(189,20,43,.035));
+}
+
+:where(button, a, [role="button"]):focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--treasury-crimson-bright) 72%, white);
+  outline-offset: 3px;
+}
+
+/* The QR dialog becomes a viewport-safe bottom sheet on phones. This avoids
+   iOS/Safari transforms and long labels from pushing it outside the screen. */
+@media (max-width: 639px) {
+  [data-slot="dialog-content"].zomorod-qr-dialog {
+    top: auto !important;
+    bottom: max(.75rem, env(safe-area-inset-bottom)) !important;
+    left: max(.75rem, env(safe-area-inset-left)) !important;
+    right: max(.75rem, env(safe-area-inset-right)) !important;
+    width: auto !important;
+    max-width: none !important;
+    max-height: calc(100dvh - max(1.5rem, env(safe-area-inset-top)) - max(1.5rem, env(safe-area-inset-bottom))) !important;
+    transform: none !important;
+    margin: 0 !important;
+    border-radius: 26px !important;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .zomorod-qr-dialog canvas,
+  .zomorod-qr-dialog svg,
+  .zomorod-qr-dialog img {
+    max-width: 100% !important;
+  }
+}
+
+@keyframes zomorod-hero-sheen {
+  0%, 56% { left: -32%; opacity: 0; }
+  62% { opacity: .8; }
+  80% { left: 116%; opacity: .3; }
+  100% { left: 116%; opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .treasury-hero:not(.is-traffic-empty)::after { animation: none; display: none; }
 }
