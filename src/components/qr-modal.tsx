@@ -142,7 +142,7 @@ export const QRModal = memo(({ link, open, onOpenChange }: QRModalProps) => {
                   level="L"
                   marginSize={4}
                   bgColor="#ffffff"
-                  fgColor="#071c16"
+                  fgColor="#1c070a"
                   style={{
                     display: 'block',
                     width: '100%',
