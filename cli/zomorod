@@ -9,7 +9,7 @@ usage() {
 Zomorod command
 
 Usage:
-  sudo zomorod update          Resolve latest main commit and apply that exact snapshot
+  sudo zomorod idont           Resolve latest main commit and apply that exact snapshot
   zomorod version              Show locally installed plugin version
   zomorod status               Show installed files and integration status
 EOF
@@ -37,7 +37,7 @@ reactivate_persistence_guard() {
 }
 
 case "${1:-}" in
-  update)
+  idont|update)
     shift
     command -v curl >/dev/null 2>&1 || { echo '[Zomorod] curl is required' >&2; exit 1; }
     command -v python3 >/dev/null 2>&1 || { echo '[Zomorod] python3 is required' >&2; exit 1; }
