@@ -1805,18 +1805,28 @@
    iOS/Safari transforms and long labels from pushing it outside the screen. */
 @media (max-width: 639px) {
   [data-slot="dialog-content"].zomorod-qr-dialog {
+    position: fixed !important;
     top: auto !important;
-    bottom: max(.75rem, env(safe-area-inset-bottom)) !important;
-    left: max(.75rem, env(safe-area-inset-left)) !important;
-    right: max(.75rem, env(safe-area-inset-right)) !important;
-    width: auto !important;
-    max-width: none !important;
-    max-height: calc(100dvh - max(1.5rem, env(safe-area-inset-top)) - max(1.5rem, env(safe-area-inset-bottom))) !important;
+    bottom: max(12px, env(safe-area-inset-bottom)) !important;
+    left: 12px !important;
+    right: 12px !important;
+    inset-inline-start: 12px !important;
+    inset-inline-end: 12px !important;
+    width: calc(100vw - 24px) !important;
+    max-width: calc(100vw - 24px) !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    max-height: calc(100dvh - max(24px, env(safe-area-inset-top)) - max(24px, env(safe-area-inset-bottom))) !important;
     transform: none !important;
     margin: 0 !important;
     border-radius: 26px !important;
     overscroll-behavior: contain;
     -webkit-overflow-scrolling: touch;
+  }
+
+  [data-slot="dialog-content"].zomorod-qr-dialog > * {
+    min-width: 0 !important;
+    max-width: 100% !important;
   }
 
   .zomorod-qr-dialog canvas,
