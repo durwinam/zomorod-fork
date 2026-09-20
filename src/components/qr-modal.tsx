@@ -79,13 +79,7 @@ export const QRModal = memo(({ link, open, onOpenChange }: QRModalProps) => {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent
-        className="max-h-[calc(100dvh-24px)] overflow-y-auto rounded-[24px] p-4 sm:p-5"
-        style={{
-          width: 'calc(100vw - 24px)',
-          maxWidth: '420px',
-          boxSizing: 'border-box',
-          overflowX: 'hidden',
-        }}
+        className="zomorod-qr-dialog max-h-[calc(100dvh-24px)] w-[calc(100vw-24px)] max-w-[420px] min-w-0 overflow-x-hidden overflow-y-auto rounded-[24px] p-4 sm:p-5"
         dir={dir}
         onOpenAutoFocus={(event) => event.preventDefault()}
       >
@@ -123,19 +117,8 @@ export const QRModal = memo(({ link, open, onOpenChange }: QRModalProps) => {
           )}
 
           {canGenerateQR ? (
-            <div
-              className="flex w-full min-w-0 justify-center rounded-[22px] border border-black/5 bg-white p-3 shadow-sm sm:p-4"
-              style={{ overflow: 'visible' }}
-            >
-              <div
-                className="shrink-0 bg-white"
-                style={{
-                  width: 'min(224px, calc(100vw - 96px))',
-                  height: 'min(224px, calc(100vw - 96px))',
-                  maxWidth: '100%',
-                  maxHeight: '100%',
-                }}
-              >
+            <div className="flex w-full min-w-0 justify-center overflow-hidden rounded-[22px] border border-black/5 bg-white p-3 shadow-sm sm:p-4">
+              <div className="aspect-square w-[224px] max-w-full shrink-0 bg-white">
                 <QRCodeCanvas
                   value={qrValue}
                   size={224}
@@ -143,13 +126,7 @@ export const QRModal = memo(({ link, open, onOpenChange }: QRModalProps) => {
                   marginSize={4}
                   bgColor="#ffffff"
                   fgColor="#1c070a"
-                  style={{
-                    display: 'block',
-                    width: '100%',
-                    height: '100%',
-                    maxWidth: '100%',
-                    maxHeight: '100%',
-                  }}
+                  style={{ display: 'block', width: '100%', height: '100%' }}
                   role="img"
                   aria-label={`${t('qr.title')} - ${link.name}`}
                 />

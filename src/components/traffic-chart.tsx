@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { Area, AreaChart, CartesianGrid, XAxis, YAxis } from "recharts"
+import { CartesianGrid, Line, LineChart, XAxis, YAxis } from "recharts"
 import { useTranslation } from "react-i18next"
 import type { TooltipProps } from "recharts"
 import { dateUtils } from "@/lib/dateFormatter"
@@ -153,13 +153,25 @@ export const TrafficChart = React.memo(function TrafficChart({
   const filteredData = React.useMemo(() => {
     if (!data || data.length === 0) return []
 
-    return data.map((point) => ({
-      date: point.period_start,
-      traffic: point.total_traffic / displayUnit.divisor,
-      displayTraffic: Number((point.total_traffic / displayUnit.divisor).toFixed(3)),
-      _bytes: point.total_traffic,
-      _period_start: point.period_start,
-    }))
+    // Plot only points that actually came from the usage API. No synthesized
+    // buckets, zero-fill, interpolation records, or placeholder traffic.
+    return data
+      .filter((point) =>
+        typeof point?.period_start === "string" &&
+        Number.isFinite(Date.parse(point.period_start)) &&
+        Number.isFinite(Number(point.total_traffic)) &&
+        Number(point.total_traffic) >= 0
+      )
+      .map((point) => {
+        const bytes = Number(point.total_traffic)
+        return {
+          date: point.period_start,
+          traffic: bytes / displayUnit.divisor,
+          displayTraffic: Number((bytes / displayUnit.divisor).toFixed(3)),
+          _bytes: bytes,
+          _period_start: point.period_start,
+        }
+      })
   }, [data, displayUnit])
   const hasChartPoints = filteredData.length > 0
   const totalUsedBytes = React.useMemo(
@@ -214,20 +226,14 @@ export const TrafficChart = React.memo(function TrafficChart({
               className="aspect-auto h-[250px] w-full max-w-full"
             >
               {hasChartPoints ? (
-                <AreaChart
+                <LineChart
                   data={filteredData}
                   margin={{ top: 10, right: 0, left: 0, bottom: 0 }}
                 >
                   <defs>
-                    <linearGradient id="fillTraffic" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stopColor="var(--treasury-gold-bright)" stopOpacity={0.52} />
-                      <stop offset="34%" stopColor="var(--treasury-emerald-bright)" stopOpacity={0.34} />
-                      <stop offset="100%" stopColor="var(--treasury-emerald-bright)" stopOpacity={0.025} />
-                    </linearGradient>
                     <linearGradient id="strokeTraffic" x1="0" y1="0" x2="1" y2="0">
-                      <stop offset="0%" stopColor="var(--treasury-emerald-bright)" />
-                      <stop offset="78%" stopColor="var(--treasury-emerald-bright)" />
-                      <stop offset="100%" stopColor="var(--treasury-gold-bright)" />
+                      <stop offset="0%" stopColor="var(--treasury-crimson-bright)" />
+                      <stop offset="100%" stopColor="var(--treasury-crimson-bright)" />
                     </linearGradient>
                     <filter id="trafficGlow" x="-30%" y="-30%" width="160%" height="160%">
                       <feGaussianBlur stdDeviation="2.5" result="blur" />
@@ -277,25 +283,25 @@ export const TrafficChart = React.memo(function TrafficChart({
                     }}
                   />
                   <ChartTooltip
-                    cursor={{ stroke: 'var(--treasury-gold)', strokeWidth: 1, strokeDasharray: '3 4' }}
+                    cursor={{ stroke: 'var(--treasury-crimson-bright)', strokeWidth: 1, strokeDasharray: '3 4' }}
                     content={<CustomTrafficTooltip timeRange={timeRange} />}
                   />
-                  <Area
+                  <Line
                     dataKey="displayTraffic"
                     type="monotone"
-                    fill="url(#fillTraffic)"
                     stroke="url(#strokeTraffic)"
                     strokeWidth={3}
-                    filter="url(#trafficGlow)"
-                    dot={filteredData.length <= 40 ? { r: 3.5, fill: 'var(--treasury-gold-bright)', stroke: 'var(--treasury-emerald)', strokeWidth: 2 } : false}
-                    activeDot={{ r: 6, fill: 'var(--treasury-gold-bright)', stroke: 'var(--card-solid)', strokeWidth: 3 }}
-                    connectNulls
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    dot={filteredData.length <= 40 ? { r: 3.2, fill: 'var(--treasury-crimson-bright)', stroke: 'var(--card-solid)', strokeWidth: 2 } : false}
+                    activeDot={{ r: 6, fill: 'var(--treasury-crimson-bright)', stroke: 'var(--card-solid)', strokeWidth: 3 }}
+                    connectNulls={false}
                     isAnimationActive
                     animationBegin={120}
-                    animationDuration={1250}
+                    animationDuration={900}
                     animationEasing="ease-out"
                   />
-                </AreaChart>
+                </LineChart>
               ) : !isLoading ? (
                 <div className="h-full w-full flex flex-col items-center justify-center gap-2 text-muted-foreground text-sm">
                   <div className="w-10 h-10 rounded-full border border-dashed border-muted-foreground/40 flex items-center justify-center">
