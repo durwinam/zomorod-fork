@@ -79,7 +79,7 @@ export const QRModal = memo(({ link, open, onOpenChange }: QRModalProps) => {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent
-        className="zomorod-qr-dialog max-h-[calc(100dvh-24px)] w-[calc(100vw-24px)] max-w-[420px] min-w-0 overflow-x-hidden overflow-y-auto rounded-[24px] p-4 sm:p-5"
+        className="zomorod-qr-dialog max-h-[calc(100dvh-24px)] w-[calc(100vw-24px)] max-w-none min-w-0 overflow-x-hidden overflow-y-auto rounded-[24px] p-4 sm:w-full sm:max-w-[420px] sm:p-5"
         dir={dir}
         onOpenAutoFocus={(event) => event.preventDefault()}
       >
