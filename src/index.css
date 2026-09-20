@@ -449,13 +449,13 @@
   .ios-stat-icon { margin: 0; }
   .ios-stat-value { max-width: 46vw; margin: 0; text-align: end; }
   [data-slot="dialog-content"] {
-    top: auto;
-    bottom: 0;
-    width: 100%;
-    max-width: none;
-    transform: translateX(-50%);
-    border-radius: 1.35rem 1.35rem 0 0;
-    padding-bottom: max(1.5rem, env(safe-area-inset-bottom));
+    top: 50%;
+    bottom: auto;
+    width: calc(100vw - 24px);
+    max-width: 360px;
+    transform: translate(-50%, -50%);
+    border-radius: 1.4rem;
+    padding-bottom: 1rem;
   }
 }
 
@@ -1801,38 +1801,59 @@
   outline-offset: 3px;
 }
 
-/* The QR dialog becomes a viewport-safe bottom sheet on phones. This avoids
-   iOS/Safari transforms and long labels from pushing it outside the screen. */
+/* QR dialog — centered, compact and viewport-safe on mobile, matching the clean QR presentation style. */
 @media (max-width: 639px) {
-  [data-slot="dialog-content"].zomorod-qr-dialog {
+  html body [data-slot="dialog-content"].zomorod-qr-dialog {
     position: fixed !important;
-    top: auto !important;
-    bottom: max(12px, env(safe-area-inset-bottom)) !important;
-    left: 12px !important;
-    right: 12px !important;
-    inset-inline-start: 12px !important;
-    inset-inline-end: 12px !important;
+    top: 50% !important;
+    bottom: auto !important;
+    left: 50% !important;
+    right: auto !important;
+    inset-inline-start: 50% !important;
+    inset-inline-end: auto !important;
     width: calc(100vw - 24px) !important;
-    max-width: none !important;
+    max-width: 360px !important;
+    min-width: 0 !important;
+    height: auto !important;
+    max-height: calc(100dvh - 24px) !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    transform: translate(-50%, -50%) !important;
+    border-radius: 1.4rem !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    padding: 16px !important;
+  }
+
+  html body [data-slot="dialog-content"].zomorod-qr-dialog > * {
+    width: 100% !important;
+    max-width: 100% !important;
     min-width: 0 !important;
     box-sizing: border-box !important;
-    max-height: calc(100dvh - max(24px, env(safe-area-inset-top)) - max(24px, env(safe-area-inset-bottom))) !important;
-    transform: none !important;
-    margin: 0 !important;
-    border-radius: 26px !important;
-    overscroll-behavior: contain;
-    -webkit-overflow-scrolling: touch;
   }
 
-  [data-slot="dialog-content"].zomorod-qr-dialog > * {
-    min-width: 0 !important;
-    max-width: 100% !important;
+  html body .zomorod-qr-dialog .zomorod-qr-surface {
+    width: 240px !important;
+    min-width: 240px !important;
+    min-height: 240px !important;
+    padding: 16px !important;
+    flex: 0 0 240px !important;
   }
 
-  .zomorod-qr-dialog canvas,
-  .zomorod-qr-dialog svg,
-  .zomorod-qr-dialog img {
-    max-width: 100% !important;
+  html body .zomorod-qr-dialog .zomorod-qr-surface > div {
+    width: 208px !important;
+    height: 208px !important;
+    flex: 0 0 208px !important;
+  }
+
+  html body .zomorod-qr-dialog canvas,
+  html body .zomorod-qr-dialog svg,
+  html body .zomorod-qr-dialog img {
+    display: block !important;
+    width: 208px !important;
+    height: 208px !important;
+    max-width: 208px !important;
+    margin: 0 auto !important;
   }
 }
 
@@ -1845,31 +1866,4 @@
 
 @media (prefers-reduced-motion: reduce) {
   .treasury-hero:not(.is-traffic-empty)::after { animation: none; display: none; }
-}
-
-
-/* Zomorod QR — definitive mobile viewport sizing */
-@media screen and (max-width: 639px) {
-  html body [data-slot="dialog-content"].zomorod-qr-dialog {
-    position: fixed !important;
-    top: auto !important;
-    bottom: max(12px, env(safe-area-inset-bottom)) !important;
-    left: 50% !important;
-    right: auto !important;
-    inset-inline-start: auto !important;
-    inset-inline-end: auto !important;
-    width: calc(100vw - 24px) !important;
-    max-width: calc(100vw - 24px) !important;
-    min-width: 0 !important;
-    height: auto !important;
-    max-height: calc(100dvh - 24px) !important;
-    margin: 0 !important;
-    padding: 16px !important;
-    box-sizing: border-box !important;
-    transform: translateX(-50%) !important;
-    translate: none !important;
-    overflow-x: hidden !important;
-    overflow-y: auto !important;
-    border-radius: 24px !important;
-  }
 }
