@@ -213,7 +213,7 @@ sudo bash /tmp/zomorod-install.sh --no-restart
 بعد از اولین نصب، روش رسمی بروزرسانی این است:
 
 ```bash
-sudo zomorod update
+sudo zomorod idont
 ```
 
 Updater ابتدا SHA دقیق آخرین Commit شاخه `main` را Resolve می‌کند و سپس همان Snapshot ثابت را نصب می‌کند تا فایل‌های چند نسخه با هم مخلوط نشوند.

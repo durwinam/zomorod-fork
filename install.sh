@@ -26,7 +26,7 @@ Usage:
   install.sh --update [--lang fa|en|ru|zh]
 
 After the first install:
-  sudo zomorod update
+  sudo zomorod idont
 
 Safety:
   The installer restarts only the PasarGuard panel through PasarGuard's official CLI.
@@ -347,7 +347,7 @@ main() {
   printf '  • Theme storage:         isolated as zomorod-theme\n'
   printf '  • Persistence:           pre-start Python bootstrap + host integration guard\n'
   printf '  • Service lifecycle:     safe PasarGuard CLI restart only; no raw Docker lifecycle commands\n'
-  printf '  • Update command:        sudo zomorod update\n'
+  printf '  • Update command:        sudo zomorod idont\n'
   printf '\nOwner-only /sub/<admin>/<subscription-hash> routes are activated by the safe PasarGuard restart when its official CLI is available.\n'
   printf 'Open PasarGuard → Settings → Zomorod to manage namespaces and preferences.\n'
 }
