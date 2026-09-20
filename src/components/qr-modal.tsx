@@ -79,7 +79,7 @@ export const QRModal = memo(({ link, open, onOpenChange }: QRModalProps) => {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent
-        className="zomorod-qr-dialog max-h-[calc(100dvh-24px)] w-[calc(100vw-24px)] max-w-[360px] min-w-0 overflow-x-hidden overflow-y-auto rounded-[24px] p-4 sm:w-full sm:max-w-[360px] sm:p-5"
+        className="zomorod-qr-dialog max-h-[calc(100dvh-24px)] w-[calc(100vw-24px)] max-w-[420px] min-w-0 overflow-x-hidden overflow-y-auto rounded-[24px] p-4 sm:w-full sm:max-w-[240px] sm:p-5"
         dir={dir}
         onOpenAutoFocus={(event) => event.preventDefault()}
       >
@@ -117,7 +117,7 @@ export const QRModal = memo(({ link, open, onOpenChange }: QRModalProps) => {
           )}
 
           {canGenerateQR ? (
-            <div className="zomorod-qr-surface flex w-[240px] max-w-full min-w-0 min-h-[240px] items-center justify-center overflow-hidden rounded-[22px] border border-black/5 bg-white p-4 shadow-sm">
+            <div className="zomorod-qr-surface flex w-[420px] max-w-full min-w-0 min-h-[420px] items-center justify-center overflow-hidden rounded-[22px] border border-black/5 bg-white p-4 shadow-sm">
               <div className="aspect-square w-[208px] max-w-full shrink-0 bg-white">
                 <QRCodeCanvas
                   value={qrValue}
