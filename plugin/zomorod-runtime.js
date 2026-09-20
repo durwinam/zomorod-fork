@@ -30,12 +30,12 @@
       position:relative!important;
       isolation:isolate;
       overflow:hidden!important;
-      border-color:rgba(16,185,129,.42)!important;
+      border-color:rgba(220,38,63,.42)!important;
       background:
-        radial-gradient(circle at 8% 18%,rgba(16,185,129,.16),transparent 34%),
+        radial-gradient(circle at 8% 18%,rgba(220,38,63,.16),transparent 34%),
         radial-gradient(circle at 92% 82%,rgba(184,134,11,.18),transparent 36%),
-        linear-gradient(135deg,rgba(6,95,70,.10),rgba(4,120,87,.055) 48%,rgba(184,134,11,.09))!important;
-      box-shadow:0 12px 38px rgba(6,95,70,.12),0 0 0 1px rgba(184,134,11,.08),inset 0 1px 0 rgba(255,255,255,.08)!important;
+        linear-gradient(135deg,rgba(98,10,23,.10),rgba(159,16,39,.055) 48%,rgba(184,134,11,.09))!important;
+      box-shadow:0 12px 38px rgba(98,10,23,.12),0 0 0 1px rgba(184,134,11,.08),inset 0 1px 0 rgba(255,255,255,.08)!important;
       animation:zomorodAnnBreathe 3.4s ease-in-out infinite;
     }
     .zomorod-special-announcement>*{position:relative;z-index:2}
@@ -55,15 +55,15 @@
     .zomorod-special-announcement .treasury-notice-icon{
       color:#f4d57a!important;
       border-color:rgba(184,134,11,.26)!important;
-      background:linear-gradient(145deg,#065f46,#047857 62%,#a06b16)!important;
-      box-shadow:0 0 0 1px rgba(255,255,255,.08),0 0 24px rgba(16,185,129,.20)!important;
+      background:linear-gradient(145deg,#620a17,#9f1027 62%,#a06b16)!important;
+      box-shadow:0 0 0 1px rgba(255,255,255,.08),0 0 24px rgba(220,38,63,.20)!important;
       animation:zomorodAnnIcon 2.1s ease-in-out infinite;
     }
     .zomorod-special-announcement h2{
-      color:#047857!important;
-      text-shadow:0 0 18px rgba(16,185,129,.12);
+      color:#9f1027!important;
+      text-shadow:0 0 18px rgba(220,38,63,.12);
     }
-    html.dark .zomorod-special-announcement h2{color:#6ee7b7!important}
+    html.dark .zomorod-special-announcement h2{color:#ff9aa8!important}
     #${SUPPORT_ID}{
       min-height:34px;
       display:inline-flex;
@@ -71,17 +71,17 @@
       gap:.4rem;
       padding:.42rem .62rem;
       border-radius:999px;
-      border:1px solid rgba(16,185,129,.20);
+      border:1px solid rgba(220,38,63,.20);
       color:inherit;
-      background:linear-gradient(135deg,rgba(16,185,129,.08),rgba(184,134,11,.08));
+      background:linear-gradient(135deg,rgba(220,38,63,.08),rgba(184,134,11,.08));
       font-size:.72rem;
       font-weight:750;
       text-decoration:none;
       white-space:nowrap;
       transition:transform .16s ease,border-color .16s ease,background .16s ease;
     }
-    #${SUPPORT_ID}:hover{transform:translateY(-1px);border-color:rgba(16,185,129,.38);background:linear-gradient(135deg,rgba(16,185,129,.12),rgba(184,134,11,.11))}
-    #${SUPPORT_ID} .zomorod-support-gem{color:#059669;font-size:.78rem;line-height:1}
+    #${SUPPORT_ID}:hover{transform:translateY(-1px);border-color:rgba(220,38,63,.38);background:linear-gradient(135deg,rgba(220,38,63,.12),rgba(184,134,11,.11))}
+    #${SUPPORT_ID} .zomorod-support-gem{color:#dc263f;font-size:.78rem;line-height:1}
     #${SUPPORT_ID} .zomorod-support-label{max-width:128px;overflow:hidden;text-overflow:ellipsis}
     @media(max-width:560px){ #${SUPPORT_ID}{padding:.42rem .52rem}#${SUPPORT_ID} .zomorod-support-value{display:none}}
     @keyframes zomorodAnnSweep{
@@ -91,8 +91,8 @@
       70%,100%{left:122%;opacity:0}
     }
     @keyframes zomorodAnnBreathe{
-      0%,100%{transform:translateY(0);box-shadow:0 12px 38px rgba(6,95,70,.12),0 0 0 1px rgba(184,134,11,.08)}
-      50%{transform:translateY(-1px);box-shadow:0 16px 46px rgba(6,95,70,.18),0 0 0 1px rgba(184,134,11,.16),0 0 30px rgba(16,185,129,.08)}
+      0%,100%{transform:translateY(0);box-shadow:0 12px 38px rgba(98,10,23,.12),0 0 0 1px rgba(184,134,11,.08)}
+      50%{transform:translateY(-1px);box-shadow:0 16px 46px rgba(98,10,23,.18),0 0 0 1px rgba(184,134,11,.16),0 0 30px rgba(220,38,63,.08)}
     }
     @keyframes zomorodAnnIcon{
       0%,100%{transform:scale(1) rotate(0deg)}
