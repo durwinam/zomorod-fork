@@ -200,7 +200,7 @@ function App() {
     ? 100
     : Math.max(0, Math.min(100, 100 - usagePercentage));
   const isTrafficEmpty = Boolean(effectiveData.data_limit) && remainingPercentage <= 0;
-  const liquidHue = Math.round(remainingPercentage * 1.35);
+  const liquidHue = 352;
   const liquidStyle = {
     '--liquid-level': `${remainingPercentage}%`,
     '--liquid-color': `hsl(${liquidHue} 72% 38%)`,
