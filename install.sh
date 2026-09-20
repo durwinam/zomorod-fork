@@ -3,8 +3,8 @@ set -Eeuo pipefail
 
 LANG_CODE="fa"
 VERSION="latest"
-REPO_OWNER="PEDIHS"
-REPO_NAME="zomorod-template"
+REPO_OWNER="durwinam"
+REPO_NAME="zomorod-fork"
 PASARGUARD_ROOT="/opt/pasarguard"
 ZOMOROD_ROOT="/opt/zomorod"
 PYTHON_BOOTSTRAP_DIR="/var/lib/pasarguard/zomorod/python"

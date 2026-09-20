@@ -8,7 +8,7 @@
   <img alt="Zomorod" src="https://img.shields.io/badge/Zomorod-Special-065f46?style=for-the-badge&labelColor=0b2f26">
   <img alt="PasarGuard" src="https://img.shields.io/badge/PasarGuard-Compatible-b8860b?style=for-the-badge&labelColor=3a2d09">
   <img alt="Persian First" src="https://img.shields.io/badge/Language-فارسی-047857?style=for-the-badge">
-  <img alt="CI" src="https://github.com/PEDIHS/zomorod-template/actions/workflows/ci.yml/badge.svg">
+  <img alt="CI" src="https://github.com/durwinam/zomorod-fork/actions/workflows/ci.yml/badge.svg">
 </p>
 
 <p align="center">
@@ -181,7 +181,7 @@ Zomorod دیگر Local Storage مربوط به Theme پنل PasarGuard را لم
 دستور استاندارد نصب روی یک سرور دارای PasarGuard:
 
 ```bash
-curl -fL --show-error -H 'Cache-Control: no-cache' -H 'Pragma: no-cache' "https://raw.githubusercontent.com/PEDIHS/zomorod-template/main/install.sh?install=$(date +%s)" -o /tmp/zomorod-install.sh && sudo bash /tmp/zomorod-install.sh
+curl -fL --show-error -H 'Cache-Control: no-cache' -H 'Pragma: no-cache' "https://raw.githubusercontent.com/durwinam/zomorod-fork/main/install.sh?install=$(date +%s)" -o /tmp/zomorod-install.sh && sudo bash /tmp/zomorod-install.sh
 ```
 
 این روش Installer را ابتدا در `/tmp` ذخیره می‌کند، نسخه کش‌شده را دور می‌زند و فقط در صورت دانلود موفق آن را اجرا می‌کند.

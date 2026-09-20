@@ -5,7 +5,7 @@
 <p align="center">
   <img alt="Zomorod" src="https://img.shields.io/badge/Zomorod-Special-065f46?style=for-the-badge&labelColor=0b2f26">
   <img alt="PasarGuard" src="https://img.shields.io/badge/PasarGuard-Compatible-b8860b?style=for-the-badge&labelColor=3a2d09">
-  <img alt="CI" src="https://github.com/PEDIHS/zomorod-template/actions/workflows/ci.yml/badge.svg">
+  <img alt="CI" src="https://github.com/durwinam/zomorod-fork/actions/workflows/ci.yml/badge.svg">
 </p>
 
 <p align="center">
@@ -190,19 +190,19 @@ The PasarGuard dashboard keeps using its own theme key. As a result, switching t
 Run on an existing PasarGuard server:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/PEDIHS/zomorod-template/main/install.sh | sudo bash
+curl -fsSL https://raw.githubusercontent.com/durwinam/zomorod-fork/main/install.sh | sudo bash
 ```
 
 Select another language:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/PEDIHS/zomorod-template/main/install.sh | sudo bash -s -- --lang en
+curl -fsSL https://raw.githubusercontent.com/durwinam/zomorod-fork/main/install.sh | sudo bash -s -- --lang en
 ```
 
 Install a tagged release:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/PEDIHS/zomorod-template/main/install.sh | sudo bash -s -- --version v4.0.0
+curl -fsSL https://raw.githubusercontent.com/durwinam/zomorod-fork/main/install.sh | sudo bash -s -- --version v4.0.0
 ```
 
 Supported languages: `fa`, `en`, `ru`, `zh`.
@@ -253,7 +253,7 @@ systemctl status zomorod-integrator.timer
 ## 🗑️ Uninstall
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/PEDIHS/zomorod-template/main/uninstall.sh | sudo bash
+curl -fsSL https://raw.githubusercontent.com/durwinam/zomorod-fork/main/uninstall.sh | sudo bash
 ```
 
 The uninstaller removes Zomorod integration files while intentionally leaving PasarGuard database settings intact.
@@ -263,7 +263,7 @@ The uninstaller removes Zomorod integration files while intentionally leaving Pa
 ## 🧪 Development
 
 ```bash
-git clone https://github.com/PEDIHS/zomorod-template.git
+git clone https://github.com/durwinam/zomorod-fork.git
 cd zomorod-template
 bun install --frozen-lockfile
 bun run build
