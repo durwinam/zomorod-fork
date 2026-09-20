@@ -117,7 +117,7 @@ export const QRModal = memo(({ link, open, onOpenChange }: QRModalProps) => {
           )}
 
           {canGenerateQR ? (
-            <div className="flex w-full min-w-0 justify-center overflow-hidden rounded-[22px] border border-black/5 bg-white p-3 shadow-sm sm:p-4">
+            <div className="flex w-full min-w-0 max-w-full justify-center overflow-hidden rounded-[22px] border border-black/5 bg-white p-3 shadow-sm sm:p-4">
               <div className="aspect-square w-[224px] max-w-full shrink-0 bg-white">
                 <QRCodeCanvas
                   value={qrValue}
