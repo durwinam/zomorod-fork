@@ -27,11 +27,41 @@ import { useDir } from '@/hooks/useDir';
 import { cn } from '@/lib/utils';
 import type { UsageDataPoint } from '@/types/user';
 
-const isUsageDataSeries = (value: unknown): value is UsageDataPoint[] => Array.isArray(value);
+const isUsageDataSeries = (value: unknown): value is UsageDataPoint[] =>
+  Array.isArray(value) &&
+  value.some((point) =>
+    point &&
+    typeof point === 'object' &&
+    Number.isFinite(Number((point as UsageDataPoint).total_traffic)) &&
+    typeof (point as UsageDataPoint).period_start === 'string'
+  );
 
 const getChartUsageData = (stats: unknown): UsageDataPoint[] => {
   if (!stats || typeof stats !== 'object' || Array.isArray(stats)) return [];
-  return Object.values(stats).find(isUsageDataSeries) ?? [];
+
+  const entries = Object.entries(stats as Record<string, unknown>)
+    .filter(([, value]) => isUsageDataSeries(value))
+    .map(([key, value]) => ({ key: key.toLowerCase(), value: value as UsageDataPoint[] }));
+
+  if (!entries.length) return [];
+
+  // Prefer the aggregate/total series when the API exposes several traffic series.
+  const preferred =
+    entries.find(({ key }) => /(^|[_-])(total|all|traffic)([_-]|$)/.test(key)) ??
+    entries.find(({ key }) => key.includes('total')) ??
+    entries[0];
+
+  return preferred.value
+    .filter((point) =>
+      typeof point?.period_start === 'string' &&
+      Number.isFinite(Number(point.total_traffic)) &&
+      Number(point.total_traffic) >= 0
+    )
+    .map((point) => ({
+      period_start: point.period_start,
+      total_traffic: Number(point.total_traffic),
+    }))
+    .sort((a, b) => Date.parse(a.period_start) - Date.parse(b.period_start));
 };
 
 const formatBytes = (bytes: number) => {
