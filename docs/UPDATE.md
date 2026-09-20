@@ -3,7 +3,7 @@
 After the first installation, update Zomorod with:
 
 ```bash
-sudo zomorod update
+sudo zomorod idont
 ```
 
 The updater downloads the newest `main` installer with cache bypass headers, refreshes the subscription template, dashboard plugin, runtime, backend addon and systemd integration, then hot-applies the dashboard/template integration without restarting or recreating PasarGuard containers.
